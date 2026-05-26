@@ -221,6 +221,98 @@ struct CalendarTabView: View {
     }
 }
 
+struct PenguRoutineConsentView: View {
+    let viewModel: PenguRoutineViewModel
+    
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                Color.black.ignoresSafeArea()
+                
+                Image(geometry.size.width > geometry.size.height ? "pr2" : "pr")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .ignoresSafeArea()
+                    .opacity(0.95)
+                
+                if geometry.size.width < geometry.size.height {
+                    VStack(spacing: 12) {
+                        Spacer()
+                        titleText
+                            .multilineTextAlignment(.center)
+                        subtitleText
+                            .multilineTextAlignment(.center)
+                        Button {
+                            viewModel.acceptConsent()
+                        } label: {
+                            Image("prr")
+                                .resizable()
+                                .frame(width: 295, height: 54)
+                        }
+                        
+                        Button {
+                            viewModel.skipConsent()
+                        } label: {
+                            Text("Skip")
+                                .font(.headline)
+                                .foregroundColor(.gray)
+                        }
+                    }
+                    .padding(.bottom, 24)
+                } else {
+                    HStack {
+                        Spacer()
+                        VStack(alignment: .leading, spacing: 12) {
+                            Spacer()
+                            titleText
+                            subtitleText
+                        }
+                        Spacer()
+                        VStack {
+                            Spacer()
+                            Button {
+                                viewModel.acceptConsent()
+                            } label: {
+                                Image("prr")
+                                    .resizable()
+                                    .frame(width: 295, height: 54)
+                            }
+                            
+                            Button {
+                                viewModel.skipConsent()
+                            } label: {
+                                Text("Skip")
+                                    .font(.headline)
+                                    .foregroundColor(.white.opacity(0.55))
+                            }
+                        }
+                        Spacer()
+                    }
+                    .padding(.bottom, 24)
+                }
+            }
+        }
+        .ignoresSafeArea()
+        .preferredColorScheme(.dark)
+    }
+    
+    private var subtitleText: some View {
+        Text("STAY TUNED WITH BEST OFFERS FROM\nOUR CASINO")
+            .font(.system(size: 14, weight: .black, design: .monospaced))
+            .foregroundColor(.white.opacity(0.77))
+            .padding(.horizontal, 12)
+    }
+    
+    private var titleText: some View {
+        Text("ALLOW NOTIFICATIONS ABOUT\nBONUSES AND PROMOS")
+            .font(.system(size: 24, weight: .black, design: .monospaced))
+            .foregroundColor(.white)
+            .padding(.horizontal, 12)
+    }
+    
+}
+
 struct CalendarDayCell: View {
     let date: Date
     let isToday: Bool

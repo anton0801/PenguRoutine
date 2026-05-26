@@ -7,11 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F798D6D2FC5C43F004F6F82 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8F798D6C2FC5C43F004F6F82 /* FirebaseCore */; };
+		8F798D6F2FC5C43F004F6F82 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8F798D6E2FC5C43F004F6F82 /* FirebaseMessaging */; };
+		8F798D722FC5C9E1004F6F82 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 8F798D712FC5C9E1004F6F82 /* AppsFlyerLib */; };
+		8F798D952FC5E39C004F6F82 /* NotificationsService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8F798D8E2FC5E39C004F6F82 /* NotificationsService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8F798D9D2FC5E3A9004F6F82 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8F798D9C2FC5E3A9004F6F82 /* FirebaseMessaging */; };
 		8FB14CC72FBF2693005F595E /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 8FB14CC62FBF2693005F595E /* codemagic.yaml */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8F798D932FC5E39C004F6F82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F6A61682FB91802000CE08A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F798D8D2FC5E39C004F6F82;
+			remoteInfo = NotificationsService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8F798D9A2FC5E39C004F6F82 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8F798D952FC5E39C004F6F82 /* NotificationsService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8F6A61702FB91802000CE08A /* PenguRoutine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PenguRoutine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F798D8E2FC5E39C004F6F82 /* NotificationsService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationsService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB14CC62FBF2693005F595E /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -22,6 +52,13 @@
 				Info.plist,
 			);
 			target = 8F6A616F2FB91802000CE08A /* PenguRoutine */;
+		};
+		8F798D992FC5E39C004F6F82 /* Exceptions for "NotificationsService" folder in "NotificationsService" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8F798D8D2FC5E39C004F6F82 /* NotificationsService */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -34,6 +71,14 @@
 			path = PenguRoutine;
 			sourceTree = "<group>";
 		};
+		8F798D8F2FC5E39C004F6F82 /* NotificationsService */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8F798D992FC5E39C004F6F82 /* Exceptions for "NotificationsService" folder in "NotificationsService" target */,
+			);
+			path = NotificationsService;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +86,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F798D6F2FC5C43F004F6F82 /* FirebaseMessaging in Frameworks */,
+				8F798D6D2FC5C43F004F6F82 /* FirebaseCore in Frameworks */,
+				8F798D722FC5C9E1004F6F82 /* AppsFlyerLib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F798D8B2FC5E39C004F6F82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F798D9D2FC5E3A9004F6F82 /* FirebaseMessaging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +108,8 @@
 			children = (
 				8FB14CC62FBF2693005F595E /* codemagic.yaml */,
 				8F6A61722FB91802000CE08A /* PenguRoutine */,
+				8F798D8F2FC5E39C004F6F82 /* NotificationsService */,
+				8F798D9B2FC5E3A9004F6F82 /* Frameworks */,
 				8F6A61712FB91802000CE08A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,8 +118,16 @@
 			isa = PBXGroup;
 			children = (
 				8F6A61702FB91802000CE08A /* PenguRoutine.app */,
+				8F798D8E2FC5E39C004F6F82 /* NotificationsService.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8F798D9B2FC5E3A9004F6F82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,20 +140,48 @@
 				8F6A616C2FB91802000CE08A /* Sources */,
 				8F6A616D2FB91802000CE08A /* Frameworks */,
 				8F6A616E2FB91802000CE08A /* Resources */,
+				8F798D9A2FC5E39C004F6F82 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8F798D942FC5E39C004F6F82 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				8F6A61722FB91802000CE08A /* PenguRoutine */,
 			);
 			name = PenguRoutine;
 			packageProductDependencies = (
+				8F798D6C2FC5C43F004F6F82 /* FirebaseCore */,
+				8F798D6E2FC5C43F004F6F82 /* FirebaseMessaging */,
+				8F798D712FC5C9E1004F6F82 /* AppsFlyerLib */,
 			);
 			productName = PenguRoutine;
 			productReference = 8F6A61702FB91802000CE08A /* PenguRoutine.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8F798D8D2FC5E39C004F6F82 /* NotificationsService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F798D962FC5E39C004F6F82 /* Build configuration list for PBXNativeTarget "NotificationsService" */;
+			buildPhases = (
+				8F798D8A2FC5E39C004F6F82 /* Sources */,
+				8F798D8B2FC5E39C004F6F82 /* Frameworks */,
+				8F798D8C2FC5E39C004F6F82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8F798D8F2FC5E39C004F6F82 /* NotificationsService */,
+			);
+			name = NotificationsService;
+			packageProductDependencies = (
+				8F798D9C2FC5E3A9004F6F82 /* FirebaseMessaging */,
+			);
+			productName = NotificationsService;
+			productReference = 8F798D8E2FC5E39C004F6F82 /* NotificationsService.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -102,6 +196,9 @@
 					8F6A616F2FB91802000CE08A = {
 						CreatedOnToolsVersion = 16.4;
 					};
+					8F798D8D2FC5E39C004F6F82 = {
+						CreatedOnToolsVersion = 16.4;
+					};
 				};
 			};
 			buildConfigurationList = 8F6A616B2FB91802000CE08A /* Build configuration list for PBXProject "PenguRoutine" */;
@@ -113,12 +210,17 @@
 			);
 			mainGroup = 8F6A61672FB91802000CE08A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8F798D6B2FC5C43F004F6F82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8F798D702FC5C9E1004F6F82 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8F6A61712FB91802000CE08A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8F6A616F2FB91802000CE08A /* PenguRoutine */,
+				8F798D8D2FC5E39C004F6F82 /* NotificationsService */,
 			);
 		};
 /* End PBXProject section */
@@ -132,6 +234,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8F798D8C2FC5E39C004F6F82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -142,7 +251,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8F798D8A2FC5E39C004F6F82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F798D942FC5E39C004F6F82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F798D8D2FC5E39C004F6F82 /* NotificationsService */;
+			targetProxy = 8F798D932FC5E39C004F6F82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8F6A617A2FB91803000CE08A /* Debug */ = {
@@ -272,6 +396,7 @@
 				INFOPLIST_FILE = PenguRoutine/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Pengu Routine";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your access to use this feature in application.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Pengu Routine uses tracking data to improve app performance, enhance the user experience, understand how features are used, and support ongoing updates and functionality improvements. This information also helps maintain app reliability, stability, and security.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -286,7 +411,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.routingsplanning.app.PenguRoutine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -313,6 +438,7 @@
 				INFOPLIST_FILE = PenguRoutine/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Pengu Routine";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need your access to use this feature in application.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Pengu Routine uses tracking data to improve app performance, enhance the user experience, understand how features are used, and support ongoing updates and functionality improvements. This information also helps maintain app reliability, stability, and security.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -327,7 +453,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.routingsplanning.app.PenguRoutine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -338,6 +464,67 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		8F798D972FC5E39C004F6F82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationsService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationsService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.routingsplanning.app.PenguRoutine.NotificationsService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F798D982FC5E39C004F6F82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationsService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationsService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.routingsplanning.app.PenguRoutine.NotificationsService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -362,7 +549,58 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		8F798D962FC5E39C004F6F82 /* Build configuration list for PBXNativeTarget "NotificationsService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F798D972FC5E39C004F6F82 /* Debug */,
+				8F798D982FC5E39C004F6F82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8F798D6B2FC5C43F004F6F82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.13.0;
+			};
+		};
+		8F798D702FC5C9E1004F6F82 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8F798D6C2FC5C43F004F6F82 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F798D6B2FC5C43F004F6F82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		8F798D6E2FC5C43F004F6F82 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F798D6B2FC5C43F004F6F82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		8F798D712FC5C9E1004F6F82 /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F798D702FC5C9E1004F6F82 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
+		8F798D9C2FC5E3A9004F6F82 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F798D6B2FC5C43F004F6F82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8F6A61682FB91802000CE08A /* Project object */;
 }

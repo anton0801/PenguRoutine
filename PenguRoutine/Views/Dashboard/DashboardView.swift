@@ -221,6 +221,33 @@ struct StatMiniCard: View {
     }
 }
 
+
+struct ErrorApp: View {
+    
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                Color.black.ignoresSafeArea()
+                
+                Image("errorprs")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .ignoresSafeArea()
+                    .blur(radius: 9)
+                    .opacity(0.45)
+                
+                Image("loaderrorprs")
+                    .resizable()
+                    .frame(width: 280, height: 235)
+            }
+        }
+        .ignoresSafeArea()
+    }
+    
+}
+
+
 struct DashboardBlockRow: View {
     let block: IceBlock
     @EnvironmentObject var routineVM: RoutineViewModel

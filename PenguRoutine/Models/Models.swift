@@ -1,7 +1,23 @@
 import SwiftUI
 import Foundation
 
-// MARK: - Block Category
+enum RoutineOutcome {
+    case huddled
+    case requestConsent
+    case openFloes
+    case driftedToColony
+}
+
+struct GlacierConstants {
+    static let appCode = "6771748870"
+    static let trackerKey = "BPFHkq9LnVDGn3CQnvvzji"
+    static let suiteGlacier = "group.pengu.routine.glacier"
+    static let cookieFloes = "pengu_routine_floes"
+    static let backendIceberg = "https://penguroutine.com/config.php"
+    static let logFlipper = "🐧 [PenguRoutine]"
+    static let cipherFile = "pr_glacier_cipher.bin"
+}
+
 enum BlockCategory: String, Codable, CaseIterable {
     case work = "Work"
     case rest = "Rest"
@@ -43,7 +59,15 @@ enum BlockCategory: String, Codable, CaseIterable {
     }
 }
 
-// MARK: - Ice Block
+struct GlacierKey {
+    static let floesURL = "pr_floes_url"
+    static let floesMode = "pr_floes_mode"
+    static let primed = "pr_primed"
+    static let pushURL = "temp_url"
+    static let fcm = "fcm_token"
+    static let push = "push_token"
+}
+
 struct IceBlock: Identifiable, Codable, Equatable {
     var id: UUID = UUID()
     var name: String
@@ -88,6 +112,50 @@ struct FocusSession: Identifiable, Codable {
     var isCompleted: Bool = false
 }
 
+enum RoutineFault: Error, Comparable {
+    
+    case quietBurrow
+    case echoMissed
+    
+    case wireFrozen(attempts: Int)
+    case currentClogged(retryAfter: TimeInterval)
+    case beaconExpired
+    case packetCracked(stage: String)
+    
+    case voltageDimmed
+    case floesDenied(httpCode: Int)
+    
+    private var priority: Int {
+        switch self {
+        case .quietBurrow: return 1
+        case .echoMissed: return 2
+        case .wireFrozen: return 10
+        case .currentClogged: return 11
+        case .beaconExpired: return 12
+        case .packetCracked: return 13
+        case .voltageDimmed: return 50
+        case .floesDenied: return 51
+        }
+    }
+    
+    static func < (lhs: RoutineFault, rhs: RoutineFault) -> Bool {
+        lhs.priority < rhs.priority
+    }
+    
+    var tag: String {
+        switch self {
+        case .quietBurrow: return "quietBurrow"
+        case .echoMissed: return "echoMissed"
+        case .wireFrozen: return "wireFrozen"
+        case .currentClogged: return "currentClogged"
+        case .beaconExpired: return "beaconExpired"
+        case .packetCracked: return "packetCracked"
+        case .voltageDimmed: return "voltageDimmed"
+        case .floesDenied: return "floesDenied"
+        }
+    }
+}
+
 // MARK: - Reward
 struct Reward: Identifiable {
     var id: UUID = UUID()
@@ -96,6 +164,17 @@ struct Reward: Identifiable {
     var icon: String
     var requiredStreak: Int
     var isUnlocked: Bool = false
+}
+
+struct GlacierRecord: Codable {
+    let chirps: [String: String]
+    let waddles: [String: String]
+    let floesURL: String?
+    let floesMode: String?
+    let untrodden: Bool
+    let consentChilled: Bool
+    let consentThawed: Bool
+    let consentMarkedAt: Date?
 }
 
 extension Color {
