@@ -168,7 +168,7 @@ struct SplashView: View {
                     HStack(spacing: 6) {
                         Image(systemName: "snowflake")
                             .font(.system(size: 12, weight: .semibold))
-                        Text("Smart daily utility")
+                        Text("Loading app content.\nWait until it's ready!")
                             .font(.system(size: 16, weight: .medium, design: .rounded))
                     }
                     .foregroundColor(Color(hex: "0EA5E9"))
